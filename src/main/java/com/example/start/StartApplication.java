@@ -1,5 +1,8 @@
 package com.example.start;
 
+import java.security.Security;
+
+import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -18,6 +21,7 @@ public class StartApplication extends SpringBootServletInitializer{
 		return application.sources(StartApplication.class);
 	}*/
     public static void main(String[] args) {
+        Security.addProvider(new BouncyCastleProvider());
         SpringApplication.run(StartApplication.class, args);
     }
 
