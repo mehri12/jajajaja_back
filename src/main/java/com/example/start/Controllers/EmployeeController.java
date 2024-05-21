@@ -34,7 +34,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(value = "https://102.211.210.62")
+@CrossOrigin(value = "*")
 public class EmployeeController {
     @Autowired
     private EmployeeRepo personneRepo;

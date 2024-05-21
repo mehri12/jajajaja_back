@@ -16,7 +16,8 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/file")
-@CrossOrigin(value = "https://102.211.210.62")
+@CrossOrigin(value = "*")
+//@CrossOrigin(value = "https://102.211.210.62")
 public class FileController {
 
 	   @Autowired
