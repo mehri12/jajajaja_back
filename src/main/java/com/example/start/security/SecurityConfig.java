@@ -106,7 +106,7 @@ public class SecurityConfig {
 		                        .requestMatchers("/auth/rechercheemployeerestaurer").hasAnyAuthority("ENTR")
 		                        .requestMatchers("/auth/rechercheemployeeServir").permitAll()
 		                        .requestMatchers("/auth/getsp").permitAll()
-		                        .requestMatchers("/auth/verifieremail").permitAll()
+		                        .requestMatchers("/auth/verifieremail/*").permitAll()
 		                        .requestMatchers("/auth/rechercheemployeeGold_r").hasAnyAuthority("ENTR")
 		                        .requestMatchers("/auth/rechercheemployeeSuperieur_r").hasAnyAuthority("ENTR")
 		                        .requestMatchers("/auth/rechercheemployeeRestaurer_r").hasAnyAuthority("ENTR")
