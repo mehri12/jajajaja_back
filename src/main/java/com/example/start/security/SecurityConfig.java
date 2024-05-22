@@ -89,7 +89,7 @@ public class SecurityConfig {
 		                        .requestMatchers("/auth/addentreprise").permitAll()
 		                        .requestMatchers("/auth/exists/*").permitAll()
 		                        .requestMatchers("/auth/update").permitAll()
-		                        .requestMatchers("/auth/verifieremail").permitAll()
+		                        .requestMatchers("/auth/verifieremail/**").permitAll()
 		                        .requestMatchers("/auth/forgetPassword/**").permitAll()
 		                        .requestMatchers("/auth/updatePassword/**").permitAll()
 		                        .requestMatchers("/auth/savefichier/*").permitAll()
