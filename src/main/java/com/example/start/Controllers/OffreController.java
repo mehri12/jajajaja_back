@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/offre")
-@CrossOrigin(value = "*")
+@CrossOrigin(value = "https://tie-job.com")
 //@CrossOrigin(value = "https://102.211.210.62")
 public class OffreController {
 	@Autowired
