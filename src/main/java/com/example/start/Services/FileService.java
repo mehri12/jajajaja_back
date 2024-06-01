@@ -33,31 +33,45 @@ public class FileService {
   
 
     public File addfile(MultipartFile f) throws IOException {
-		File fl=new File(f.getOriginalFilename(),f.getContentType(),compressBytes(f.getContentType().getBytes()));
-		fl.setNomfichier("image");
-		String path="C://Users//Lenovo//php//formation angular//testangular - Copie//projetangular//src//assets";
-		Path pt=Paths.get(path+"/"+f.getOriginalFilename());
-		Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
-		return fileemprep.save(fl);
+		if(f!=null) {
+			File fl=new File(f.getOriginalFilename(),f.getContentType(),compressBytes(f.getContentType().getBytes()));
+			fl.setNomfichier("image");
+			String path="/aa/upppp/dist/projetangular/assets";
+			Path pt=Paths.get(path+"/"+f.getOriginalFilename());
+			Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
+			return fileemprep.save(fl);
+		}
+		return null;
     }
     public File addcv(MultipartFile f) throws IOException {
-  		File fl=new File(f.getOriginalFilename(),f.getContentType(),compressBytes(f.getContentType().getBytes()));
-  		fl.setNomfichier("fichier");
-  		String path="C://Users//Lenovo//php//formation angular//testangular - Copie//projetangular//src//assets";
-  		Path pt=Paths.get(path+"/"+f.getOriginalFilename());
-  		Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
-  		return fileemprep.save(fl);
+  		if(f!=null) {
+  			File fl=new File(f.getOriginalFilename(),f.getContentType(),compressBytes(f.getContentType().getBytes()));
+  	  		fl.setNomfichier("fichier");
+  	  		String path="/aa/upppp/dist/projetangular/assets";
+  	  		Path pt=Paths.get(path+"/"+f.getOriginalFilename());
+  	  		Files.copy(f.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
+  	  		return fileemprep.save(fl);
+  		}
+  		return null;
       }
  
     public File  getfileemp(Long id) {
-    	Employee e=employeeRepo.findById(id).get();
-    	File f=fileemprep.getfileemp(id);
-    	File fil = new File(f.getIdfile(),f.getTitlefile(), f.getTypefile(),
-				decompressBytes(f.getTaillefile()),f.getNomfichier(),e);
-    
-    return fil;
-    	
-    }
+
+        Employee e=employeeRepo.findById(id).get();
+
+        File f=fileemprep.getfileemp(id);
+
+  if(f !=null) {
+
+        File fil = new File(f.getIdfile(),f.getTitlefile(), f.getTypefile(),
+
+                    decompressBytes(f.getTaillefile()),f.getNomfichier(),e);
+
+          return fil;
+  }
+
+  return null; 
+      }
     public File  getcv(Long id) {
     	Employee e=employeeRepo.findById(id).get();
     	File f=fileemprep.getcv(id);
@@ -90,7 +104,7 @@ public class FileService {
     	File fl= fileemprep.findById(id).get();
 
     		File f=new File(file.getOriginalFilename(),file.getContentType(),compressBytes(file.getContentType().getBytes()));;
-        	String path="C://Users//Lenovo//php//formation angular//testangular - Copie//projetangular//src//assets";
+        	String path="/aa/upppp/dist/projetangular/assets";
     		Path pt=Paths.get(path+"/"+file.getOriginalFilename());
     		Files.copy(file.getInputStream(), pt,StandardCopyOption.REPLACE_EXISTING);
     		fl.setTaillefile(f.getTaillefile());
