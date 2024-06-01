@@ -6,6 +6,9 @@ import com.example.start.Entities.File;
 import com.example.start.Repositories.EmployeeRepo;
 
 import com.example.start.Repositories.FileRepo;
+
+import jakarta.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -42,6 +45,22 @@ public class FileService {
 			return fileemprep.save(fl);
 		}
 		return null;
+    }
+     public File addfile(MultipartFile file,Long id) throws IOException {
+
+    Employee us= employeeRepo.findById(id).get();
+    File
+
+    image=File.builder().nomfichier(file.getOriginalFilename()).typefile(file.getContentType())
+
+    .taillefile(file.getBytes()).build();
+
+    image.setEmp(us);
+    return fileemprep.save(image);
+    }
+    @Transactional
+    public File getimage(Long id) throws IOException {
+    return fileemprep.getimg(id);
     }
     public File addcv(MultipartFile f) throws IOException {
   		if(f!=null) {

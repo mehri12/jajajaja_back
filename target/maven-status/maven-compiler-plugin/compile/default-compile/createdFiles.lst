@@ -13,6 +13,7 @@ com\example\start\Repositories\EmployeeRepo.class
 com\example\start\Services\OffreService.class
 com\example\start\Entities\TypePack.class
 com\example\start\security\SecurityConfig.class
+com\example\start\Entities\File$FileBuilder.class
 com\example\start\security\MyUserDetailsService.class
 com\example\start\Services\Emailservice.class
 com\example\start\token\TokenManager.class

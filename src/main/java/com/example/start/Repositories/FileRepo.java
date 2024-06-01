@@ -18,5 +18,7 @@ public interface FileRepo extends JpaRepository<File,Long> {
 	    public File getfileemp(@Param("cin") Long id);
 	    @Query(value = "select * from employee e , file f where e.id=f.emp_id and f.nomfichier ='fichier' and e.id = :cin", nativeQuery = true)
 	    public File getcv(@Param("cin") Long id);
+	    @Query(value = "select * from file f where f.emp_id = :id", nativeQuery = true)
+	    public File getimg(@Param("id") Long id);
 	
 }

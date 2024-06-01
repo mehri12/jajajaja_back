@@ -27,6 +27,14 @@ public class FileController {
 	        file.addfile(f);
 	        return "file ajoutèe";
 	    }
+	     @PostMapping("/ajoutfile/{id}")
+	    public String addfile(@RequestParam("file") MultipartFile f,@PathVariable Long
+
+	    id) throws IOException {
+
+	    file.addfile(f,id);
+	    return "file ajoutèe";
+	    }
 	
 	    @GetMapping("/getfileemploye/{id}")
 	    public File getfileemp(@PathVariable Long id) throws IOException {

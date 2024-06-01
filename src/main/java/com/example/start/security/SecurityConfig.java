@@ -101,6 +101,8 @@ public class SecurityConfig {
 		                        .requestMatchers("/offre/getoffre/*").permitAll()
 		                        .requestMatchers("/offre/deleteoffre/*").hasAnyAuthority("ENTR")
 		                        .requestMatchers("/file/updatecv/*").permitAll()
+		                        .requestMatchers("/file/ajoutfile/*").permitAll()
+		                        .requestMatchers("/file/getfile/*").permitAll()
 		                        .requestMatchers("/auth/rechercheemployeeGold").hasAnyAuthority("ENTR")
 		                        .requestMatchers("/auth/rechercheemployeesuperieur").hasAnyAuthority("ENTR")
 		                        .requestMatchers("/auth/rechercheemployeerestaurer").hasAnyAuthority("ENTR")
